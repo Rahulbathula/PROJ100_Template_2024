@@ -80,8 +80,44 @@ int main ()
     wait_us(10000);
     if (buttonDuration < 3000000) {                 //if button is pressed less than 3sec
     printf("bead\n");
-    wait_us(int us)
+
+    wait_us(1000000);
     Wheel.Speed(1.0f, 1.0f);
+    wait_us(2000000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(500000);
+
+    Wheel.Speed(-1.0f, -1.0f);      // come back
+    wait_us(2000000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(1.0f, -1.0f);      //turn right
+    wait_us(1000000);               //1sec
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(1.0f, 1.0f);
+    wait_us(500000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(-1.0f, -1.0f);      // come back a little bit
+    wait_us(200000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(0.0f, 1.0f);        //turning for the second row
+    wait_us(500000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(1.0f, 1.0f);        // go for second row
+    wait_us(2000000);
+    Wheel.Speed(0.0f, 0.0f);        // wait
+    wait_us(500000);
+
+    Wheel.Speed(-1.0f, -1.0f);      // come back
+    wait_us(2000000);
+
+
+
+
     }
     else if (buttonDuration > 3000000) {
     printf("1 meter\n");

@@ -46,7 +46,7 @@ int main ()
     // Wait for the blue button to be pressed
     printf("Press Blue Button To Begin\n\r");
     while (myButton == 0){greenLED = !greenLED; ThisThread::sleep_for(100ms);}
-
+    wait_us(0000);
     // Start the encoders
     left_encoder.start();
     right_encoder.start();
@@ -62,37 +62,31 @@ int main ()
     // simple_test();
     //speed_test();
     printf("stage1");
-    while(true){
+    int buttonDuration = ButtonTimer.read_us();
+    ButtonTimer.reset();
+    
+    while(!myButton);                // Wait here until button is pressed
+    wait_us(100000);
+    ButtonTimer.start();            //  start timer here
+    printf("stage3\n");
+    //printf("%f" , buttonDuration );
 
-        // Write the parts of your code which should run in a loop between here..
-        printf("stage2\n");
-        while (myButton == 1 || Buttonpressed == 1 ) {
-            printf("stage3\n");
-            Buttonpressed = 1;
-            ButtonTimer.reset();
-            ButtonTimer.start();
-            float buttonDuration = ButtonTimer.read();
-            printf("%f" , buttonDuration );
-            while (myButton == 0 || Buttonpressed == 0) {
-                Buttonpressed = 0;
-                ButtonTimer.stop();
-                ButtonTimer.read_us();
-                wait_us(100);
-                if (buttonDuration < 3000000) {                 //if button is pressed less than 3sec
-                printf("bead\n");
-                continue;
-                }
-                else if (buttonDuration > 3000000) {
-                printf("1 meter");
-                
-                }
-                ButtonTimer.reset();
-            }
-        }
-        
+     
+    while(myButton);    // wait for release
+    ButtonTimer.stop();
+    buttonDuration = ButtonTimer.read_us();
+    printf("%d" , buttonDuration );
+
+    wait_us(10000);
+    if (buttonDuration < 3000000) {                 //if button is pressed less than 3sec
+    printf("bead\n");
+    wait_us(int us)
+    Wheel.Speed(1.0f, 1.0f);
+    }
+    else if (buttonDuration > 3000000) {
+    printf("1 meter\n");
+    
+    }
 
 
-        // ..and here
-
-    };
 }

@@ -40,6 +40,23 @@ void simple_test(){
                 printf("Pulse time %dms, Pulses received %d\r\n",ms,counter);   // Print the pulse time
             }
         }
+        if(right_encoder.pulseReceived()>0){
+            // If so, read the pulse time from the timer
+            // This line is ugly but it just reads the timer and converts the time to milliseconds
+            uint32_t ms = std::chrono::duration_cast<std::chrono::milliseconds>(t.elapsed_time()).count();
+            
+            // Reset the timer
+            t.reset();
+
+            // Toggle the LED
+            led=!led;
+
+            // Only print every 10 pulses
+            counter++;
+            if(counter % 10 == 0 ){
+                printf("Pulse time %dms, Pulses received %d\r\n",ms,counter);   // Print the pulse time
+            }
+        }
     }
 }
 

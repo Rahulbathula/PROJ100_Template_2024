@@ -4,11 +4,12 @@
 #include "pwm_tone.h"
 #include "PROJ100_Encoder.h"
 #include "PROJ100_Encoder_Tests.h"
+#include <cstdio>
 
 #define TIME_PERIOD 10             //Constant compiler Values here 10 equates to 10ms or 100Hz base Frequency
 #define ENCODER_PIN_LEFT            D8
 #define ENCODER_PIN_RIGHT           D6 
-#define PULSES_PER_ROTATION         20
+#define PULSES_PER_ROTATION         23
 #define DEBOUNCE_US                 30000
 
 DigitalIn microswitch1(D4);         //Instance of the DigitalIn class called 'microswitch1'
@@ -55,14 +56,40 @@ int main ()
     // If these lines are left in the lines below will never run
     /*************************************************/
 
+    Timer ButtonTimer;      // To measure the Timing of the Button pressed
+    int Buttonpressed = 0;  //to check if button is pressed
+    int Buttonreleased = 0; // to check if button is released
     // simple_test();
-    speed_test();
-
+    //speed_test();
+    printf("stage1");
     while(true){
 
         // Write the parts of your code which should run in a loop between here..
-
-
+        printf("stage2\n");
+        while (myButton == 1 || Buttonpressed == 1 ) {
+            printf("stage3\n");
+            Buttonpressed = 1;
+            ButtonTimer.reset();
+            ButtonTimer.start();
+            float buttonDuration = ButtonTimer.read();
+            printf("%f" , buttonDuration );
+            while (myButton == 0 || Buttonpressed == 0) {
+                Buttonpressed = 0;
+                ButtonTimer.stop();
+                ButtonTimer.read_us();
+                wait_us(100);
+                if (buttonDuration < 3000000) {                 //if button is pressed less than 3sec
+                printf("bead\n");
+                continue;
+                }
+                else if (buttonDuration > 3000000) {
+                printf("1 meter");
+                
+                }
+                ButtonTimer.reset();
+            }
+        }
+        
 
 
         // ..and here

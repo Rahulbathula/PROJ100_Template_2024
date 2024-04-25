@@ -82,17 +82,16 @@ int main ()
     printf("bead\n");
 
     wait_us(1000000);
-    Wheel.Speed(1.0f, 1.0f);
-    wait_us(2000000);
+    Wheel.Speed(1.0f, 1.0f);        //front
+    wait_us(1800000);
     Wheel.Speed(0.0f, 0.0f);
     wait_us(500000);
-
     Wheel.Speed(-1.0f, -1.0f);      // come back
-    wait_us(2000000);
+    wait_us(1500000);
     Wheel.Speed(0.0f, 0.0f);
     wait_us(100000);
     Wheel.Speed(1.0f, -1.0f);      //turn right
-    wait_us(1000000);               //1sec
+    wait_us(500000);               //1sec - 0.5sec
     Wheel.Speed(0.0f, 0.0f);
     wait_us(100000);
     Wheel.Speed(1.0f, 1.0f);
@@ -100,28 +99,97 @@ int main ()
     Wheel.Speed(0.0f, 0.0f);
     wait_us(100000);
     Wheel.Speed(-1.0f, -1.0f);      // come back a little bit
-    wait_us(200000);
+    wait_us(250000);
     Wheel.Speed(0.0f, 0.0f);
     wait_us(100000);
     Wheel.Speed(0.0f, 1.0f);        //turning for the second row
+    wait_us(700000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+
+    Wheel.Speed(1.0f, 1.0f);        // go for second row
+    wait_us(1800000);
+    Wheel.Speed(0.0f, 0.0f);        // wait
+    wait_us(500000);
+    Wheel.Speed(-1.0f, -1.0f);      // come back
+    wait_us(1500000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(1.0f, -1.0f);      //turn right
+    wait_us(500000);               //1sec - 0.5sec
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(1.0f, 1.0f);
     wait_us(500000);
     Wheel.Speed(0.0f, 0.0f);
     wait_us(100000);
-    Wheel.Speed(1.0f, 1.0f);        // go for second row
-    wait_us(2000000);
+    Wheel.Speed(-1.0f, -1.0f);      // come back a little bit
+    wait_us(250000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(0.0f, 1.0f);        //turning for the second row
+    wait_us(700000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+
+    Wheel.Speed(1.0f, 1.0f);        // go for 3rd row
+    wait_us(1800000);
     Wheel.Speed(0.0f, 0.0f);        // wait
     wait_us(500000);
-
     Wheel.Speed(-1.0f, -1.0f);      // come back
-    wait_us(2000000);
+    wait_us(1500000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(1.0f, -1.0f);      //turn right
+    wait_us(500000);               //1sec - 0.5sec
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(1.0f, 1.0f);
+    wait_us(500000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(-1.0f, -1.0f);      // come back a little bit
+    wait_us(250000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(0.0f, 1.0f);        //turning for the second row
+    wait_us(700000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
 
-
+    Wheel.Speed(1.0f, 1.0f);        // go for 4th row
+    wait_us(1800000);
+    Wheel.Speed(0.0f, 0.0f);        // wait
+    wait_us(500000);
+    Wheel.Speed(-1.0f, -1.0f);      // come back
+    wait_us(1500000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(1.0f, -1.0f);      //turn right
+    wait_us(500000);               //1sec - 0.5sec
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(1.0f, 1.0f);
+    wait_us(500000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(-1.0f, -1.0f);      // come back a little bit
+    wait_us(250000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(0.0f, 1.0f);        //turning for the second row
+    wait_us(700000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
 
 
     }
     else if (buttonDuration > 3000000) {
     printf("1 meter\n");
     
+    // for 1 sec it turns 180
+
+
     }
 
 

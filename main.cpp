@@ -189,6 +189,33 @@ int main ()
     else if (buttonDuration > 3000000) {
     printf("1 meter\n");
     
+                
+    int lcounter = 0;        // Variable to hold a count of the number of pulses received
+    int rcounter = 0;        // Variable to hold a count of the number of pulses received
+
+    float current_l_pwm = 0.8f;
+    float current_r_pwm = 0.8f;
+    // Apply power to the left motor only
+    Wheel.Speed(0.8f,0.8f);
+
+    // This loops runs forever
+    while(1){
+        // Check to see if we have received a new pulse
+        if(left_encoder.pulseReceived()>0){
+            lcounter++;
+
+
+            current_l_pwm =current_l_pwm +0.1;
+            Wheel.Speed(current_r_pwm,current_l_pwm );
+            Wheel.Speed(Wheel.getSpeedRight(),Wheel.getSpeedLeft()+0.1);
+        }
+
+        if(right_encoder.pulseReceived()>0){
+            rcounter++;
+        }
+
+    }
+
     // for 1 sec it turns 180
     if (0 <= counter < 125) {
     Wheel.Speed(1.0f, 1.0f);

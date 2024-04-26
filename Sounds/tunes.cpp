@@ -79,3 +79,43 @@ void twinkle(int s){
     Tune(buzzer,1e6/C4,s*4);
     buzzer.period_ms(TIME_PERIOD);
   }
+void mario1(int s){
+    Tune(buzzer,1e6/E5,s*2);
+    Tune(buzzer,1e6/E5,s*2);
+    Tune(buzzer,1e6/E5,s*2);
+    Tune(buzzer,1e6/C5,s*2);
+    Tune(buzzer,1e6/E5,s*2);
+    Tune(buzzer,1e6/G5,s*2);
+    Tune(buzzer,1e6/E5,s*4);
+    buzzer.period_ms(TIME_PERIOD);
+}
+
+void mario2(int s){
+    Tune(buzzer,1e6/G3,s*2);
+    Tune(buzzer,1e6/C4,s*2);
+    Tune(buzzer,1e6/E4,s*2);
+    Tune(buzzer,1e6/G4,s*2);
+    Tune(buzzer,1e6/C5,s*2);
+    Tune(buzzer,1e6/E5,s*2);
+    Tune(buzzer,1e6/G5,s*4);
+    Tune(buzzer,1e6/E5,s*3);
+
+    Tune(buzzer,1e6/G3s,s*2);
+    Tune(buzzer,1e6/C4,s*2);
+    Tune(buzzer,1e6/D4s,s*2);
+    Tune(buzzer,1e6/G4s,s*2);
+    Tune(buzzer,1e6/C5,s*2);
+    Tune(buzzer,1e6/D5s,s*2);
+    Tune(buzzer,1e6/G5s,s*4);
+    Tune(buzzer,1e6/D5s,s*3);
+
+    Tune(buzzer,1e6/A3s,s*2);
+    Tune(buzzer,1e6/D4,s*2);
+    Tune(buzzer,1e6/F4,s*2);
+    Tune(buzzer,1e6/A4s,s*2);
+    Tune(buzzer,1e6/D5,s*2);
+    Tune(buzzer,1e6/F5,s*2);
+    Tune(buzzer,1e6/A5s,s*4);
+    Tune(buzzer,1e6/C6,s*6);
+    buzzer.period_ms(TIME_PERIOD);
+}

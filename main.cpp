@@ -82,6 +82,7 @@ int main ()
     printf("bead\n");
 
     //printf("%d", right_encoder );
+    jingle_bells(250);
 
     wait_us(1000000);
     Wheel.Speed(1.0f, 1.0f);        //front
@@ -114,7 +115,7 @@ int main ()
     Wheel.Speed(0.0f, 0.0f);        // wait
     wait_us(500000);
     Wheel.Speed(-1.0f, -1.0f);      // come back
-    wait_us(1500000);
+    wait_us(1700000);
     Wheel.Speed(0.0f, 0.0f);
     wait_us(100000);
     Wheel.Speed(1.0f, -1.0f);      //turn right
@@ -139,7 +140,7 @@ int main ()
     Wheel.Speed(0.0f, 0.0f);        // wait
     wait_us(500000);
     Wheel.Speed(-1.0f, -1.0f);      // come back
-    wait_us(1500000);
+    wait_us(1700000);
     Wheel.Speed(0.0f, 0.0f);
     wait_us(100000);
     Wheel.Speed(1.0f, -1.0f);      //turn right
@@ -164,7 +165,7 @@ int main ()
     Wheel.Speed(0.0f, 0.0f);        // wait
     wait_us(500000);
     Wheel.Speed(-1.0f, -1.0f);      // come back
-    wait_us(1500000);
+    wait_us(1700000);
     Wheel.Speed(0.0f, 0.0f);
     wait_us(100000);
     Wheel.Speed(1.0f, -1.0f);      //turn right
@@ -197,48 +198,64 @@ int main ()
     float current_r_pwm = 0.8f;
     // Apply power to the left motor only
     Wheel.Speed(0.8f,0.8f);
-
+    wait_us(500000);
+    Wheel.Speed(0.0f,0.0f);
     // This loops runs forever
     while(1){
         // Check to see if we have received a new pulse
         if(left_encoder.pulseReceived()>0){
-            lcounter++;
-
-
-            current_l_pwm =current_l_pwm +0.1;
-            Wheel.Speed(current_r_pwm,current_l_pwm );
-            Wheel.Speed(Wheel.getSpeedRight(),Wheel.getSpeedLeft()+0.1);
+            lcounter++;            
         }
 
         if(right_encoder.pulseReceived()>0){
             rcounter++;
         }
 
+        if (lcounter < rcounter) {
+            Wheel.Speed(Wheel.getSpeedRight(),Wheel.getSpeedLeft()+0.1);
+            if (lcounter == 0.9 || rcounter == 0.9 ) {
+            Wheel.Speed(Wheel.getSpeedRight()-1.0,Wheel.getSpeedLeft()-1.0);
+            }
+        }
+
+        if (rcounter < lcounter) {
+            Wheel.Speed(Wheel.getSpeedLeft(),Wheel.getSpeedRight()+0.1);
+            if (lcounter == 0.9 || rcounter == 0.9 ) {
+            Wheel.Speed(Wheel.getSpeedRight()-1.0,Wheel.getSpeedLeft()-1.0);
+            }
+        }
+
+        // for 1 sec it turns 180
+        if (0 <= rcounter < 125) {
+        mario1(2);
+        mario2(4);
+        Wheel.Speed(0.8f, 0.8f);
+        wait_us(100000);
+        Wheel.Speed(0.0f, 0.0f);
+        }
+        else if (rcounter == 125) {
+        Wheel.Speed(1.0f, -1.0f);
+        wait_us(1000000);
+        Wheel.Speed(0.0f, 0.0f);
+        wait_us(100000);
+        }
+        else if (126 <= rcounter < 250) {
+        Wheel.Speed(0.8f, 0.8f);
+        wait_us(100000);
+        }
+        else if (rcounter == 250) {
+        Wheel.Speed(1.0f, -1.0f);
+        wait_us(1000000);
+        Wheel.Speed(0.0f, 0.0f);
+        wait_us(100000);
+
+        //tone
+        
+        }
+
     }
 
-    // for 1 sec it turns 180
-    if (0 <= counter < 125) {
-    Wheel.Speed(1.0f, 1.0f);
-    wait_us(100000);
-    Wheel.Speed(0.0f, 0.0f);
-    }
-    else if (counter == 125) {
-    Wheel.Speed(1.0f, -1.0f);
-    wait_us(1000000);
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(100000);
-    }
-    else if (126 <= counter < 250) {
-    Wheel.Speed(1.0f, 1.0f);
-    wait_us(100000);
-    }
-    else if (counter == 250) {
-    Wheel.Speed(1.0f, -1.0f);
-    wait_us(1000000);
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(100000);
-    //tone
-    }
+    
     }
 
 

@@ -147,15 +147,15 @@ void speed_test(){
     }
 }
 
-void sim_test(){
+void sp_test(){
                 
     int lcounter = 0;        // Variable to hold a count of the number of pulses received
     int rcounter = 0;        // Variable to hold a count of the number of pulses received
 
-    float current_l_pwm = 0.6f;
-    float current_r_pwm = 0.0f;
+    float current_l_pwm = 0.8f;
+    float current_r_pwm = 0.8f;
     // Apply power to the left motor only
-    Wheel.Speed(0.0f,0.6f);
+    Wheel.Speed(0.7f,0.7f);
 
     // This loops runs forever
     while(1){
@@ -170,6 +170,14 @@ void sim_test(){
         }
         if(right_encoder.pulseReceived()>0){
             rcounter++;
+        }
+
+        if (lcounter < rcounter) {
+            Wheel.Speed(Wheel.getSpeedRight(),Wheel.getSpeedLeft()+0.05);
+        }
+
+        if (rcounter < lcounter) {
+            Wheel.Speed(Wheel.getSpeedLeft(),Wheel.getSpeedRight()+0.05);
         }
     }
 }

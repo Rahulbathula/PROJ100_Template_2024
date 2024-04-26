@@ -82,12 +82,72 @@ int main ()
     printf("bead\n");
 
     //printf("%d", right_encoder );
-    jingle_bells(250);
 
     wait_us(1000000);
     Wheel.Speed(1.0f, 1.0f);        //front
-    wait_us(1800000);
+    wait_us(2100000);
     Wheel.Speed(0.0f, 0.0f);
+    wait_us(500000);
+    Wheel.Speed(-1.0f, -1.0f);      // come back
+    wait_us(1500000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(1.0f, -1.0f);      //turn right
+    wait_us(500000);               //1sec - 0.5sec
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(1.0f, 1.0f);        ///going for 2nd
+    wait_us(1000000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(-1.0f, 1.0f);        //turning for the second row
+    wait_us(500000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+
+    Wheel.Speed(1.0f, 1.0f);        // go for second row
+    wait_us(1800000);
+    Wheel.Speed(0.0f, 0.0f);        // wait
+    wait_us(500000);
+    Wheel.Speed(-1.0f, -1.0f);      // come back
+    wait_us(1500000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(1.0f, -1.0f);      //turn right
+    wait_us(500000);               //1sec - 0.5sec
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(1.0f, 1.0f);
+    wait_us(900000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(500000);
+    Wheel.Speed(-1.0f, 1.0f);        //turning for the 3rd row
+    wait_us(500000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+
+    Wheel.Speed(1.0f, 1.0f);        // go for 3rd row
+    wait_us(1800000);
+    Wheel.Speed(0.0f, 0.0f);        // wait
+    wait_us(500000);
+    Wheel.Speed(-1.0f, -1.0f);      // come back
+    wait_us(1500000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(1.0f, -1.0f);      //turn right
+    wait_us(500000);               //1sec - 0.5sec
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+    Wheel.Speed(1.0f, 1.0f);
+    wait_us(900000);
+    Wheel.Speed(-1.0f, 1.0f);        //turning for the 4th row
+    wait_us(1000000);
+    Wheel.Speed(0.0f, 0.0f);
+    wait_us(100000);
+
+    Wheel.Speed(1.0f, 1.0f);        // go for 4th row
+    wait_us(1800000);
+    Wheel.Speed(0.0f, 0.0f);        // wait
     wait_us(500000);
     Wheel.Speed(-1.0f, -1.0f);      // come back
     wait_us(1500000);
@@ -101,107 +161,33 @@ int main ()
     wait_us(500000);
     Wheel.Speed(0.0f, 0.0f);
     wait_us(100000);
-    Wheel.Speed(-1.0f, -1.0f);      // come back a little bit
-    wait_us(250000);
-    Wheel.Speed(0.0f, 0.0f);
+    Wheel.Speed(-1.0f, 1.0f);        //turning for the 4th row
     wait_us(500000);
-    Wheel.Speed(0.0f, 1.0f);        //turning for the second row
-    wait_us(1000000);
     Wheel.Speed(0.0f, 0.0f);
     wait_us(100000);
-
-    Wheel.Speed(1.0f, 1.0f);        // go for second row
-    wait_us(1600000);
+    Wheel.Speed(1.0f, 1.0f);        // go for 5th row
+    wait_us(1800000);
     Wheel.Speed(0.0f, 0.0f);        // wait
     wait_us(500000);
     Wheel.Speed(-1.0f, -1.0f);      // come back
-    wait_us(1700000);
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(100000);
-    Wheel.Speed(1.0f, -1.0f);      //turn right
-    wait_us(500000);               //1sec - 0.5sec
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(100000);
-    Wheel.Speed(1.0f, 1.0f);
-    wait_us(500000);
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(100000);
-    Wheel.Speed(-1.0f, -1.0f);      // come back a little bit
-    wait_us(250000);
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(500000);
-    Wheel.Speed(0.0f, 1.0f);        //turning for the 3rd row
-    wait_us(1000000);
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(100000);
-
-    Wheel.Speed(1.0f, 1.0f);        // go for 3rd row
-    wait_us(1600000);
-    Wheel.Speed(0.0f, 0.0f);        // wait
-    wait_us(500000);
-    Wheel.Speed(-1.0f, -1.0f);      // come back
-    wait_us(1700000);
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(100000);
-    Wheel.Speed(1.0f, -1.0f);      //turn right
-    wait_us(500000);               //1sec - 0.5sec
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(100000);
-    Wheel.Speed(1.0f, 1.0f);
-    wait_us(500000);
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(1000000);
-    Wheel.Speed(-1.0f, -1.0f);      // come back a little bit
-    wait_us(250000);
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(500000);
-    Wheel.Speed(0.0f, 1.0f);        //turning for the 4th row
-    wait_us(1000000);
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(100000);
-
-    Wheel.Speed(1.0f, 1.0f);        // go for 4th row
-    wait_us(1600000);
-    Wheel.Speed(0.0f, 0.0f);        // wait
-    wait_us(500000);
-    Wheel.Speed(-1.0f, -1.0f);      // come back
-    wait_us(1700000);
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(100000);
-    Wheel.Speed(1.0f, -1.0f);      //turn right
-    wait_us(500000);               //1sec - 0.5sec
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(100000);
-    Wheel.Speed(1.0f, 1.0f);
-    wait_us(500000);
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(100000);
-    Wheel.Speed(-1.0f, -1.0f);      // come back a little bit
-    wait_us(250000);
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(500000);
-    Wheel.Speed(0.0f, 1.0f);        //turning for the 4th row
-    wait_us(1000000);
-    Wheel.Speed(0.0f, 0.0f);
-    wait_us(100000);
+    wait_us(1500000);
 
 
     }
-    else if (buttonDuration > 3000000) {
+    else if (3000000 < buttonDuration < 6000000) {
     printf("1 meter\n");
     
                 
     int lcounter = 0;        // Variable to hold a count of the number of pulses received
     int rcounter = 0;        // Variable to hold a count of the number of pulses received
 
-    float current_l_pwm = 0.8f;
-    float current_r_pwm = 0.8f;
+    float current_l_pwm = 0.7f;
+    float current_r_pwm = 0.7f;
     // Apply power to the left motor only
-    Wheel.Speed(0.8f,0.8f);
-    wait_us(500000);
-    Wheel.Speed(0.0f,0.0f);
+    
     // This loops runs forever
     while(1){
+        Wheel.Speed(0.8f,0.7f);
         // Check to see if we have received a new pulse
         if(left_encoder.pulseReceived()>0){
             lcounter++;            
@@ -213,50 +199,96 @@ int main ()
 
         if (lcounter < rcounter) {
             Wheel.Speed(Wheel.getSpeedRight(),Wheel.getSpeedLeft()+0.1);
-            if (lcounter == 0.9 || rcounter == 0.9 ) {
-            Wheel.Speed(Wheel.getSpeedRight()-1.0,Wheel.getSpeedLeft()-1.0);
+            if (lcounter == 1.0 || rcounter == 1.0 ) {
+            Wheel.Speed(Wheel.getSpeedRight()-0.2,Wheel.getSpeedLeft()-0.2);
             }
         }
 
         if (rcounter < lcounter) {
             Wheel.Speed(Wheel.getSpeedLeft(),Wheel.getSpeedRight()+0.1);
-            if (lcounter == 0.9 || rcounter == 0.9 ) {
-            Wheel.Speed(Wheel.getSpeedRight()-1.0,Wheel.getSpeedLeft()-1.0);
+            if (lcounter == 1.0 || rcounter == 1.0 ) {
+            Wheel.Speed(Wheel.getSpeedRight()-0.2,Wheel.getSpeedLeft()-0.2);
             }
         }
 
-        // for 1 sec it turns 180
-        if (0 <= rcounter < 125) {
-        mario1(2);
-        mario2(4);
-        Wheel.Speed(0.8f, 0.8f);
-        wait_us(100000);
-        Wheel.Speed(0.0f, 0.0f);
+         // for 1 sec it turns 180
+        if (0 <= lcounter <= 122) {
+        Wheel.Speed(Wheel.getSpeedRight(),Wheel.getSpeedLeft());
         }
-        else if (rcounter == 125) {
-        Wheel.Speed(1.0f, -1.0f);
-        wait_us(1000000);
+        else if (lcounter > 123) {
         Wheel.Speed(0.0f, 0.0f);
-        wait_us(100000);
-        }
-        else if (126 <= rcounter < 250) {
-        Wheel.Speed(0.8f, 0.8f);
-        wait_us(100000);
-        }
-        else if (rcounter == 250) {
-        Wheel.Speed(1.0f, -1.0f);
-        wait_us(1000000);
-        Wheel.Speed(0.0f, 0.0f);
-        wait_us(100000);
-
-        //tone
-        
         }
 
     }
 
     
     }
+    else if (buttonDuration > 6000000) {
+    printf("1 meter\n");
+    
+                
+    int lcounter = 0;        // Variable to hold a count of the number of pulses received
+    int rcounter = 0;        // Variable to hold a count of the number of pulses received
+
+    float current_l_pwm = 0.7f;
+    float current_r_pwm = 0.7f;
+    // Apply power to the left motor only
+    
+    // This loops runs forever
+    while(1){
+        Wheel.Speed(0.8f,0.7f);
+        // Check to see if we have received a new pulse
+        if(left_encoder.pulseReceived()>0){
+            lcounter++;            
+        }
+
+        if(right_encoder.pulseReceived()>0){
+            rcounter++;
+        }
+
+        if (lcounter < rcounter) {
+            Wheel.Speed(Wheel.getSpeedRight(),Wheel.getSpeedLeft()+0.1);
+            if (lcounter == 1.0 || rcounter == 1.0 ) {
+            Wheel.Speed(Wheel.getSpeedRight()-0.2,Wheel.getSpeedLeft()-0.2);
+            }
+        }
+
+        if (rcounter < lcounter) {
+            Wheel.Speed(Wheel.getSpeedLeft(),Wheel.getSpeedRight()+0.1);
+            if (lcounter == 1.0 || rcounter == 1.0 ) {
+            Wheel.Speed(Wheel.getSpeedRight()-0.2,Wheel.getSpeedLeft()-0.2);
+            }
+        }
+
+         // for 1 sec it turns 180
+        if (0 <= rcounter <= 122) {
+        Wheel.Speed(Wheel.getSpeedRight(),Wheel.getSpeedLeft());
+        }
+        if (rcounter == 123) {
+        Wheel.Speed(0.0f, 0.0f);
+        wait_us(100000);
+        Wheel.Speed(1.0f, -1.0f);
+        wait_us(1000000);
+        }
+        if (124 <= rcounter <= 242) {
+        Wheel.Speed(Wheel.getSpeedRight(),Wheel.getSpeedLeft());
+        }
+        if (rcounter == 243) {
+        Wheel.Speed(0.0f, 0.0f);
+        wait_us(100000);
+        Wheel.Speed(1.0f, -1.0f);
+        wait_us(1000000);
+        Wheel.Speed(0.0f, 0.0f);
+        wait_us(100000);
+        mario2(4);
+        //tone       
+        }
+
+    }
+
+
+
+}
 
 
 }
